@@ -1,0 +1,766 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow: hidden;
+}
+
+html, body {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Hahmlet', serif;
+    font-size: 10pt;
+}
+
+ol, ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 헤더 시작 */
+header#top_menu_all{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 90%;
+    height: 80px;
+    padding: 0% 5% 0% 5%;
+    line-height: 80px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    backdrop-filter: blur(15px);
+    z-index: 999;
+}
+
+    #top_menu_all > .logo{
+        font-size: 1rem;
+        line-height: 80px;
+    }
+    #top_menu_all > .top_menu_text{
+        font-size: 1.2rem;
+        line-height: 80px;
+    }
+    #top_menu_all > .top_menu_icon{
+        margin-top: 8px;
+        font-size: 1rem;
+    }
+        .top_menu_icon > span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            font-size: 2rem;
+            font-weight: 200;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+
+/* 다운 메뉴 시작 */
+.down_menu_all{
+    position: fixed;
+    top: -1200px;
+    left: 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    width: 90%;
+    height: 100%;
+    padding: 0% 5% 0% 5%;
+    background-color: rgba(0, 0, 0, 50%);
+    backdrop-filter: blur(15px);
+    opacity: 30%;
+    transition: all 1s;
+    z-index: 999;
+}
+.down_menu_all.open{
+    top: 0px;
+    opacity: 100%;
+    transition: all 1s;
+}
+    .down_menu_all > ul{
+        margin-top: 120px;
+    }
+        .down_menu_all > ul > li{
+            margin-bottom: 50px;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #fff;
+        }
+        .down_menu_all > ul:last-child > li{
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+            .down_menu_all > ul > li > ul{
+                margin-top: 20px;
+            }
+                .down_menu_all > ul > li > ul > li{
+                    margin-top: 10px;
+                    font-size: 1.2rem;
+                    font-weight: 200;
+                }
+
+                .down_menu_all a{
+                    opacity: 60%;
+                }
+                .down_menu_all a:hover{
+                    opacity: 100%;
+                }
+
+        .down_menu_logo{
+            margin-top: 90px;
+        }
+        .down_menu_logo_img{
+            width: 200px;
+            height: 200px;
+            background-image: url(../image/down_menu_logo_img.png);
+            background-repeat: no-repeat;
+        }
+
+        .down_menu_close{
+            margin-top: 50px;
+        }
+        .down_menu_close_img{
+            width: 100px;
+            height: 100px;
+            background-image: url(../image/down_menu_close_img.png);
+            background-repeat: no-repeat;
+            opacity: 50%;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .down_menu_close_img:hover{
+            opacity: 100%;
+            transition: all 0.5s;
+        }
+
+        
+/* 내용 시작 */
+/* main section 시작 */
+.section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.full_bg{
+    position: absolute;
+}
+    #section1 > .full_bg > video{
+        width: 100%;
+        z-index: 1;
+    }
+    #section1 > .full_bg > .section1_text{
+        position: absolute;
+        top: 15%;
+        left: 0%;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        z-index: 2;
+    }
+    .section1_text > p{
+        width: 100%;
+        height: 30px;
+        font-size: 1.2rem;
+        font-weight: 200;
+        line-height: 30px;
+        margin-bottom: 100px;
+    }
+    .section1_text > h1{
+        width: 100%;
+        height: 170px;
+        font-size: 10rem;
+        font-weight: 300;
+        line-height: 170px;
+    }
+    .section1_text > div{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 50%;
+        height: 170px;
+        padding: 0% 25% 0% 25%;
+    }
+    .section1_text > div > h1{
+        width: 40%;
+        font-size: 10rem;
+        font-weight: 300;
+        line-height: 170px;
+    }
+    .section1_text > div > p{
+        margin-top: 65px;
+        width: 30%;
+        font-size: 1.5rem;
+        font-weight: 200;
+        text-align: right;
+    }
+    .section1_text > div > p:last-child{
+        text-align: left;
+    }
+
+
+/* story 시작 */
+#section2 {
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+}
+.brand_story{
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    transition: all 1.5s;
+}
+/* story 첫번째 시작 */
+    #brand_01 > p{
+        position: relative;
+        clear: both;
+        width: 80%;
+        height: 80px;
+        font-size: 1.2rem;
+        line-height: 80px;
+        margin-top: 80px;
+        padding: 0% 15% 0% 15%;
+    }
+    #brand_01 > .brand_01_text{
+        position: relative;
+        clear: both;
+        width: 80%;
+        height: 750px;
+        font-size: 1.2rem;
+        padding: 0% 15% 0% 15%;
+    }
+        .brand_01_text > div{
+            position: relative;
+            float: left;
+            width: 50%;
+            height: 750px;
+            margin-top: 20px;
+        }
+            .brand_01_text > div > h2{
+                position: relative;
+                clear: both;
+                width: 100%;
+                height: 55%;
+                margin-top: 20px;
+                font-size: 3.5rem;
+            }
+            .brand_01_text > div > p{
+                position: relative;
+                clear: both;
+                width: 100%;
+                height: 25%;
+                line-height: 2rem;
+                margin-top: 10px;
+                font-size: 1rem;
+                opacity: 50%;
+            }
+        .brand_01_text > p{
+            position: absolute;
+            bottom: 5%;
+            right: 20%;
+            width: 25%;
+            height: 170px;
+            font-size: 1rem;
+            line-height: 2rem;
+            z-index: 2;
+        }
+        .brand_01_text > .brand_img_01{
+            position: absolute;
+            top: 0;
+            right: 19%;
+            width: 0px;
+            height: 550px;
+            background-image: url(../image/brand_img_01.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 2s;
+            z-index: 1;
+        }
+
+/* story 두번째 시작 */
+
+#section3 {
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+}
+
+    #brand_02 > p{
+        position: relative;
+        clear: both;
+        width: 80%;
+        height: 80px;
+        font-size: 1.2rem;
+        line-height: 80px;
+        margin-top: 80px;
+        padding: 0% 15% 0% 15%;
+    }
+    #brand_02 > .brand_02_text{
+        position: relative;
+        clear: both;
+        width: 80%;
+        height: 750px;
+        font-size: 1.2rem;
+        padding: 0% 15% 0% 15%;
+    }
+        .brand_02_text > div:nth-child(1){
+            position: relative;
+            float: left;
+            width: 40%;
+            height: 750px;
+            margin-top: 20px;
+        }
+        .brand_02_text > div:nth-child(1) > p:nth-child(1){
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            opacity: 50%;
+            font-size: 1rem;
+            z-index: 2;
+        }
+        .brand_02_text > div:nth-child(1) > p:nth-child(2){
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            z-index: 2;
+        }
+            .brand_img_02{
+                position: absolute;
+                top: 20%;
+                left: 0%;
+                width: 400px;
+                height: 550px;
+                background-image: url(../image/brand_img_02.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                opacity: 30%;
+                z-index: 1;
+            }
+        .brand_02_text > div:nth-child(2){
+            position: relative;
+            float: left;
+            width: 40%;
+            height: 750px;
+            margin-top: 20px;
+            margin-left: 10%;
+        }
+            .brand_02_text > div:nth-child(2) > p{
+                position: absolute;
+                bottom: 10%;
+                right: 10%;
+                z-index: 2;
+            }
+            .brand_img_03{
+                position: absolute;
+                top: 10%;
+                right: 0%;
+                width: 400px;
+                height: 550px;
+                background-image: url(../image/brand_img_03.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                opacity: 30%;
+                z-index: 1;
+            }
+
+        .brand_img_04{
+            position: absolute;
+            top: 0%;
+            left: 40%;
+            width: 300px;
+            height: 700px;
+            background-image: url(../image/brand_img_04.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 5%;
+        }
+
+/* story 세번째 시작 */
+#section4 {
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+#brand_03{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.full_bg_02{
+    position: absolute;
+}
+    #brand_03 > .full_bg_02 > video{
+        width: 100%;
+        z-index: 1;
+    }
+    .brand_03_text{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 80%;
+        height: 500px;
+        padding: 0px 10% 0px 10%;
+        margin-top: 80px;
+        z-index: 2; 
+    }
+        .brand_03_text > h3{
+            position: relative;
+            clear: both;
+            width: 100%;
+            height: 500px;
+            text-align: right;
+            font-size: 7rem;
+        }
+        .brand_03_text > p{
+            position: relative;
+            clear: both;
+            width: 50%;
+            height: 120px;
+            text-align: left;
+            font-size: 1.2rem;
+            margin-top: 200px;
+        }
+
+/* we made 시작 */
+#section5{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+    #section5 > h3{
+        position: relative;
+        clear: both;
+        width: 70%;
+        height: 400px;
+        padding: 0% 15% 0% 15%;
+        font-size: 10rem;
+        line-height: 600px;
+        font-weight: 300;
+    }
+        .made_list{
+            position: absolute;
+            top: 400px;
+            left: 0px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            width: 100vw;
+            height: 500px;
+            padding: 0% 15% 0% 15%;
+            overflow-x: hidden;
+            cursor: url(../image/cursor.png),auto;
+        }
+        .made_item{
+            position: relative;
+            float: left;
+            width: 500px;
+            height: 500px;
+            flex-shrink: 0;
+            padding-right: 20px;
+            list-style: none;
+        }
+        .made_image{
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 500px;
+            height: 500px;
+            background-color: antiquewhite;
+        }
+        .made_text{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(0, 0, 0, 50%);
+            opacity: 0%;
+            transition: all 1s;
+            cursor: url(../image/cursor.png),auto;
+        }
+
+        .made_item:hover .made_text{
+            opacity: 100%;
+            transition: all 1s;
+        }
+            .made_text > h4{
+                position: relative;
+                clear: both;
+                width: 95%;
+                height: 10%;
+                margin-top: 70%;
+                padding-right: 0% 5%;
+                font-size: 2.5rem;
+                font-weight: 400;
+                text-align: right;
+            }
+            .made_text > p:nth-child(2){
+                position: relative;
+                clear: both;
+                width: 90%;
+                height: 8%;
+                padding: 0% 5%;
+                font-size: 1rem;
+                font-weight: 100;
+                text-align: right;
+            }
+            .made_text > p:last-child{
+                position: relative;
+                clear: both;
+                width: 90%;
+                height: 12%;
+                padding: 0% 5%;
+                font-size: 1.5rem;
+                font-weight: 100;
+                text-align: right;
+            }
+        
+        
+        .made_item > div{
+            display: block;
+            width: 500px;
+            height: 500px;
+        }
+
+
+
+/* CONTACT US 시작 */
+
+#section6 {
+    background-color: #000;
+}
+
+    .contact_all{
+        position: relative;
+        clear: both;
+        width: 100%;
+        height: 80%;
+        margin-top: 5%;
+    }
+        .contact_all > .contact_text{
+            position: relative;
+            clear: both;
+            width: 1000px;
+            height: 300px;
+            margin: 0 auto;
+            background-color: #333;
+            z-index: 2;
+        }
+            .contact_text > h4{
+                position: relative;
+                clear: both;
+                width: 90%;
+                height: 100px;
+                padding: 0% 5%;
+                line-height: 100px;
+                font-size: 3rem;
+                font-weight: 500;
+                color: #fff;
+            }
+            .contact_text > p{
+                position: relative;
+                clear: both;
+                width: 90%;
+                height: 55px;
+                padding: 0% 5%;
+                line-height: 55px;
+                font-size: 1.5rem;
+                font-weight: 300;
+                color: #aaa;
+            }
+            .contact_text > p > b{
+                display: inline-block;
+                width: 150px;
+                font-size: 1.5rem;
+                font-weight: 400;
+                color: #fff;
+            }
+            .contact_text > div{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 55%;
+                font-size: 10rem;
+                font-weight: 700;
+                text-align: right;
+                color: #2f2f2f;
+            }
+
+        .contact_all > .map_all{
+            position: absolute;
+            top: 20%;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            background-color: #fff;
+            opacity: 70%;
+            transition: all 1s;
+            z-index: 1;
+        }
+        .map_all:hover{
+            opacity: 100%;
+            transition: all 1s;
+        }
+
+    .contact_bottom{
+        position: relative;
+        clear: both;
+        width: 100%;
+        height: 15%;
+        background-color: #000;
+    }
+
+        .contact_bottom_left{
+            position: relative;
+            float: left;
+            width: 20%;
+            height: 100%;
+            background-image: url(../image/footer_bg_left.png);
+            background-size: cover;
+        }
+        .contact_bottom > p{
+            position: relative;
+            float: left;
+            width: 60%;
+            height: 100%;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 200;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .contact_bottom_right{
+            position: relative;
+            float: left;
+            width: 20%;
+            height: 100%;
+            background-image: url(../image/footer_bg_right.png);
+            background-size: cover;
+        }
+
+
+
+/* 왼쪽 퀵 메뉴 */
+#left_menu_all{
+    position: fixed;
+    top: 45%;
+    left: 4%;
+    width: 100px;
+    height: 180px;
+    z-index: 997;
+}
+    #left_menu_all > ul{
+        position: relative;
+        clear: both;
+        width: 150px;
+        height: 180px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+    }
+        #left_menu_all > ul > li{
+            list-style-type: '-  ';
+            color: #fff;
+            opacity: 50%;
+        }
+
+        #left_menu.shine{
+            opacity: 100%;
+        }
+        
+
+
+
+/* 오른쪽 퀵 메뉴 */
+#right_menu_all{
+    position: fixed;
+    bottom: 6%;
+    right: 3%;
+    width: 120px;
+    height: 360px;
+    z-index: 997;
+}
+    .sns_icon_all{
+        position: absolute;
+        top: 0px;
+        left: 47.5px;
+        width: 25px;
+        height: 210px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+    }
+        .sns_icon_all > a > img{
+            width: 25px;
+            height: 25px;
+            opacity: 70%;
+            transition: all 0.3s;
+        }
+        .sns_icon_all > a > img:hover{
+            opacity: 100%;
+            transition: all 0.3s;
+        }
+
+    .quick_menu_all{
+        position: absolute;
+        top: 240px;
+        left: 0px;
+        width: 120px;
+        height: 120px;
+    }
+    .quick_menu_all:hover .quick_menu_img{
+        transition: all 0.3s;
+        opacity: 100%;
+    }
+        .quick_menu_all > .quick_menu_img{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 120px;
+            height: 120px;
+            background-image: url(../image/quick_menu.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 0.3s;
+            opacity: 70%;
+
+            animation-name: quick_ani;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes quick_ani{
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(360deg);}
+        }
+
+        .quick_menu_all > a > p{
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            width: 100%;
+            height: 40px;
+            font-size: 1rem;
+            text-align: center;
+        }
